@@ -1,0 +1,48 @@
+﻿@model List<Kundan_MVCTest.Models.UserModel>
+
+@{
+    ViewBag.Title = "User List";
+}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f4f4f4;
+    }
+</style>
+
+
+<h2>User List</h2>
+
+<form method="get">
+    <label for="search">Search:</label>
+    <input type="text" name="searchFirstName" placeholder="Search by First Name" value="@Request["searchFirstName"]" />
+    <input type="text" name="searchFirstName" placeholder="Search by Email" value="@Request["serachEmail"]" />
+    <input type="submit" value="Search" />
+</form>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Birth Date</th>
+        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.EmailId</td>
+                <td>@user.UserName</td>
+                <td>@user.BirthDate.ToShortDateString()</td>
+            </tr>
+        }
+    </table>
