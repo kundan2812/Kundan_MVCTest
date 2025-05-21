@@ -12,9 +12,9 @@ namespace Kundan_MVCTest.Controllers
     {
         UserRepository repo = new UserRepository();
         // GET: User
-        public ActionResult Index(string searchFirstName="",string serachEmail="")
+        public ActionResult Index(string searchFirstName="",string searchEmail = "")
         {
-            List<UserModel> users = repo.GetUsers(searchFirstName,serachEmail);  
+            List<UserModel> users = repo.GetUsers(searchFirstName, searchEmail);  
             return View(users);
         }
     }

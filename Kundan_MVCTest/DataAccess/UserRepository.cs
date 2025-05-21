@@ -20,7 +20,7 @@ namespace Kundan_MVCTest.DataAccess
                 if (!string.IsNullOrEmpty(firstName))
                     query += " AND FirstName LIKE @FirstName";
                 if (!string.IsNullOrEmpty(email))
-                    query += " AND Emailld LIKE @Email";
+                    query += " AND EmailId LIKE @Email";
 
                 SqlCommand cmd = new SqlCommand(query, con);
                 if (!string.IsNullOrEmpty(firstName))
